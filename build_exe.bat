@@ -1,0 +1,1 @@
+pyinstaller -F -w gui.py -i reedgirl.ico
