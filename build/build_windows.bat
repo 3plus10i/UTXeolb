@@ -1,0 +1,1 @@
+pyinstaller -F -w "..\src\gui.py" -p "..\src\CommentSet.py" -i reedgirl.ico

@@ -1,3 +1,5 @@
 *.txt
-/__pycache__/
-/build_exe/
+*/__pycache__/
+/build/dist/
+/build/build/
+/build/gui.spec
