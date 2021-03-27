@@ -10,7 +10,7 @@
             window.location.reload(true);
         }
     </script>
-    <title>Acountool</title>
+    <title>乐园系统 - UTXeolb</title>
 
     <style type="text/css">
         * {
@@ -21,8 +21,8 @@
         }
 
         .nTab {
-            /* 整个宽度 */
-            width: 360px;
+            /* 整个tab页面外框宽度 */
+            width: 400px;
             /* 上下 左右的间距 */
             margin: 5px 10px;
             background: #fff;
@@ -42,7 +42,7 @@
             line-height: 30px;
             font-weight: bold;
             text-align: center;
-            width: 120px
+            width: 100px  /* 这里控制每个tab的宽度 */
         }
 
         .nTab .TabTitle li a {
@@ -69,19 +69,32 @@
             padding: 5px;
             display: block
         }
+
+        /* 普通计点页面的那几个文本框的宽度 */
+        .text_area{
+            width: 360px;
+        }
+
     </style>
 </head>
 
 <body>
-    
-    <h1 style="text-align:left; margin: 0 10px"><img src="A.png" alt="ADNMB " width="20" height="20" style="margin: 0 auto -4px;"> Acountool 一个计点器</h1>
+    <p>
+        <div style="display:inline; text-align:left; margin: 5px 12px; font-family: Helvetica,Microsoft YaHei;">
+            欢迎使用乐园系统!
+        </div>
+        <div style="display:inline; text-align:left; margin: 0 0 0 140px; font-weight: normal;">
+            <img src="user.png" alt="user: " width="20" height="20" style="margin: 0 auto -4px;">UTXeolb 已登录
+        </div>
+    </p>
 
     <div class="nTab">
         <div class="TabTitle">
             <ul id="Tab0">
                 <li class="active" onclick="nTabs(this,0);">基本计点</li>
-                <li class="normal" onclick="nTabs(this,1);">实验室</li>
-                <li class="normal" onclick="nTabs(this,2);">关于</li>
+                <li class="normal" onclick="nTabs(this,1);">世界编年史</li>
+                <li class="normal" onclick="nTabs(this,2);">实验室</li>
+                <li class="normal" onclick="nTabs(this,3);">关于</li>
             </ul>
         </div>
         <div class="TabContent">
@@ -93,23 +106,23 @@
 
                 <!-- 输入框 -->
                 <textarea
-                    id="in" rows="10" cols="40" style="color: #9e9e9e;" onclick="if(this.value =='在此处粘贴'){this.value ='';this.style.color='#000'}" onblur="if(this.value == ''){this.value = '在此处粘贴';this.style.color='#9e9e9e'}"
+                    class="text_area" id="in" rows="10" cols="40" style="color: #9e9e9e;" onclick="if(this.value =='在此处粘贴'){this.value ='';this.style.color='#000'}" onblur="if(this.value == ''){this.value = '在此处粘贴';this.style.color='#9e9e9e'}"
                     >在此处粘贴</textarea>
                 <button id="cb" type="button" onclick="count_button()" style="width:100px;height:30px">计点</button>
                 <button id="rb" type="button" onclick="reset_button()" style="width:100px;height: 30px">重置</button>
 
                 <!-- 输出框 -->
                 <p>摘要：</p>
-                <textarea id="abstract" readonly=true rows="5" cols="40"></textarea>
+                <textarea class="text_area" id="abstract" readonly=true rows="5" cols="40"></textarea>
                 <button id="copy_ab" type="button" onclick="copy_ab('abstract')" style="width:100px;height: 30px">复制摘要</button>
 
                 <p>报告：</p>
-                <textarea id="report" readonly=true rows="10" cols="40"></textarea>
+                <textarea class="text_area" id="report" readonly=true rows="10" cols="40"></textarea>
                 <button id="copy_rp" type="button" onclick="copy_rp('report')" style="width:100px;height: 30px">复制报告</button>
 
                 <!-- 控制面板 -->
                 <br><br>
-                <fieldset style="width: 300px;">
+                <fieldset class="count_panel" style="width: 360px;">
                     <legend>
                         控制面板
                     </legend>
@@ -177,16 +190,28 @@
             </div>
             <!-- 第二个tab -->
             <div id="Tab0_Content1" class="none">
-                <p>探索模式，单双号，死斗模式...</p>
+                <p>
+                    目前编年史截止到2020年4月，等更中......
+                    <br>
+                    <img src="gkd.gif" alt="gkd" width="300" style="margin: 0 auto -4px;">
+                </p>
+                <iframe 
+                    name="history" width=100% height=1000px frameborder="no" src="history.html" 
+                ></iframe> 
             </div>
             <!-- 第三个tab -->
             <div id="Tab0_Content2" class="none">
-                <p style="font-size: small;">欢迎提建议/找bug/一起开发 --> <a href="https://gitee.com/srs2020/acountool_demo">项目主页</a></p>
-                <br>
-                <div>
-                    <div id="emoji">(°∀。)</div>
-                    <button id="emoji_btn" type="button" onclick="emoji_btn()">仙客来根雕</button>
-                </div>
+                <p>Waiting:</p>
+                <ul id="TODO">
+                    <li>&nbsp;&nbsp;更新的编年史</li>
+                    <li>&nbsp;&nbsp;更多的人物立绘</li>
+                    <li>&nbsp;&nbsp;更完善的地图</li>
+                    <li>&nbsp;&nbsp;更好的页面设计</li>
+                </ul>
+            </div>
+            <!-- 第四个tab -->
+            <div id="Tab0_Content3" class="none">
+                <p><a href="https://gitee.com/srs2020/utxeolb">项目主页</a></p>
             </div>
         </div>
     </div>
