@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <!-- 强制刷新，防止本地缓存 -->
     <script>
         if(!window.name){
@@ -10,6 +11,8 @@
             window.location.reload(true);
         }
     </script>
+
+    
     <title>乐园系统 - UTXeolb</title>
 
     <style type="text/css">
@@ -22,7 +25,8 @@
 
         .nTab {
             /* 整个tab页面外框宽度 */
-            width: 400px;
+            /* 还是自动好啊gtmd */
+            /* width: 400px; */ 
             /* 上下 左右的间距 */
             margin: 5px 10px;
             background: #fff;
@@ -42,7 +46,8 @@
             line-height: 30px;
             font-weight: bold;
             text-align: center;
-            width: 100px  /* 这里控制每个tab的宽度 */
+            /* 这里控制每个tab的宽度 */
+            /* width: 100px; */
         }
 
         .nTab .TabTitle li a {
@@ -72,7 +77,8 @@
 
         /* 普通计点页面的那几个文本框的宽度 */
         .text_area{
-            width: 360px;
+            /* width: 360px; */
+            width: 95%;
         }
 
     </style>
@@ -82,8 +88,8 @@
     <p>
         <div style="display:inline; text-align:left; margin: 5px 12px; font-family: Helvetica,Microsoft YaHei;">
             欢迎使用乐园系统!
-        </div>
-        <div style="display:inline; text-align:left; margin: 0 0 0 130px; font-weight: normal;">
+        </div> 
+        <div style="display:inline; text-align:right; margin: 0 0 0 120px; font-weight: normal;">
             <img src="user.png" alt="user: " width="20" height="20" style="margin: 0 auto -4px;">UTXeolb 已登录
         </div>
     </p>
@@ -91,10 +97,11 @@
     <div class="nTab">
         <div class="TabTitle">
             <ul id="Tab0">
-                <li class="active" onclick="nTabs(this,0);">基本计点</li>
-                <li class="normal" onclick="nTabs(this,1);">世界编年史</li>
-                <li class="normal" onclick="nTabs(this,2);">实验室</li>
-                <li class="normal" onclick="nTabs(this,3);">关于</li>
+                <li id="Tab0_Title0" class="active" style="width: 20.8%;" onclick="nTabs(this,0);">基本计点</li>
+                <li id="Tab0_Title1" class="normal" style="width: 20.8%;" onclick="nTabs(this,1);">编年史</li>
+                <li id="Tab0_Title2" class="normal" style="width: 20.8%;" onclick="nTabs(this,2);">地图</li>
+                <li id="Tab0_Title3" class="normal" style="width: 20.8%;" onclick="nTabs(this,3);">人物</li>
+                <li id="Tab0_Title4" class="normal" style="width: 16.8%;" onclick="nTabs(this,4);">关于</li>
             </ul>
         </div>
         <div class="TabContent">
@@ -198,8 +205,20 @@
                     name="history" width=100% height=1000px frameborder="no" src="history.html" 
                 ></iframe> 
             </div>
-            <!-- 第三个tab -->
+            <!-- 第三个tab：地图 -->
             <div id="Tab0_Content2" class="none">
+                <iframe 
+                    name="history" width=100% height=1000px frameborder="no" src="./maps/maps.html" 
+                ></iframe> 
+            </div>
+            <!-- 第四个tab：人物 -->
+            <div id="Tab0_Content3" class="none">
+                <iframe 
+                    name="characters" width=100% height=1000px frameborder="no" src="./characters/characters.html" 
+                ></iframe> 
+            </div>
+            <!-- 第五个tab：关于 -->
+            <div id="Tab0_Content4" class="none">
                 <p>Waiting:</p>
                 <ul id="TODO">
                     <li>&nbsp;&nbsp;更新的编年史</li>
@@ -207,33 +226,19 @@
                     <li>&nbsp;&nbsp;更完善的地图</li>
                     <li>&nbsp;&nbsp;更好的页面设计</li>
                 </ul>
-            </div>
-            <!-- 第四个tab -->
-            <div id="Tab0_Content3" class="none">
                 <p><a href="https://gitee.com/srs2020/utxeolb">项目主页</a></p>
             </div>
         </div>
     </div>
     
     <!-- 结尾页脚 -->
+    <p style="font-size: xx-small;text-align:left; margin: 10px 0 0 10px">这里是「乐园」，一个拉吉箱一样的世界 :)</p>
     <p style="font-size: xx-small;text-align:left; margin: 10px 0 0 10px">UTXeolb  <a style="font-size: xx-small;" href="https://adnmb.com/t/15080844">>>No.15080844</a></p>
 
 </body>
 
 <!-- 功能脚本 -->
 <script src="index.js"></script>
-
-<script>
-    function emoji_btn(){
-        let x = document.getElementById("emoji").innerHTML;
-        if(x.includes("。)")){
-            document.getElementById("emoji").innerHTML = "(。∀°)";
-        }
-        else{
-            document.getElementById("emoji").innerHTML = "(°∀。)";
-        }
-    }
-</script>
 
 <!-- 样式 -->
 <style>
@@ -252,6 +257,10 @@
         border: 1px solid rgba(81, 203, 238, 1);
     }
 </style>
+
+<script>
+    document.getElementsByClassName('nTab').style.
+</script>
 
 <script type="text/javascript">
     // 控制tab活动的函数
