@@ -97,11 +97,11 @@
     <div class="nTab">
         <div class="TabTitle">
             <ul id="Tab0">
-                <li id="Tab0_Title0" class="active" style="width: 20.8%;" onclick="nTabs(this,0);">基本计点</li>
-                <li id="Tab0_Title1" class="normal" style="width: 20.8%;" onclick="nTabs(this,1);">编年史</li>
-                <li id="Tab0_Title2" class="normal" style="width: 20.8%;" onclick="nTabs(this,2);">地图</li>
-                <li id="Tab0_Title3" class="normal" style="width: 20.8%;" onclick="nTabs(this,3);">人物</li>
-                <li id="Tab0_Title4" class="normal" style="width: 16.8%;" onclick="nTabs(this,4);">关于</li>
+                <li id="Tab0_Title0" class="active" style="width: 20.8%;" onclick="nTabs(this,0);nTabs_load(this,0);">基本计点</li>
+                <li id="Tab0_Title1" class="normal" style="width: 20.8%;" onclick="nTabs(this,1);nTabs_load(this,1);">编年史</li>
+                <li id="Tab0_Title2" class="normal" style="width: 20.8%;" onclick="nTabs(this,2);nTabs_load(this,2);">地图</li>
+                <li id="Tab0_Title3" class="normal" style="width: 20.8%;" onclick="nTabs(this,3);nTabs_load(this,3);">人物</li>
+                <li id="Tab0_Title4" class="normal" style="width: 16.8%;" onclick="nTabs(this,4);nTabs_load(this,4);">关于</li>
             </ul>
         </div>
         <div class="TabContent">
@@ -195,26 +195,26 @@
                     </ul>
                 </fieldset>
             </div>
-            <!-- 第二个tab -->
+            <!-- 第二个tab：编年史 -->
             <div id="Tab0_Content1" class="none" >
                 <p>
                     目前编年史截止到2020年4月，等更中......
                     <br>
                 </p>
-                <iframe 
-                    name="history" width=100% height=1000px frameborder="no" src="history.html" 
+                <iframe  id="Tab0_Content1_iframe"
+                    name="history" width=100% height=1000px frameborder="no"
                 ></iframe> 
             </div>
             <!-- 第三个tab：地图 -->
             <div id="Tab0_Content2" class="none">
-                <iframe 
-                    name="history" width=100% height=1000px frameborder="no" src="./maps/maps.html" 
+                <iframe id="Tab0_Content2_iframe"
+                    name="history" width=100% height=1000px frameborder="no"
                 ></iframe> 
             </div>
             <!-- 第四个tab：人物 -->
             <div id="Tab0_Content3" class="none">
-                <iframe 
-                    name="characters" width=100% height=1000px frameborder="no" src="./characters/characters.html" 
+                <iframe  id="Tab0_Content3_iframe"
+                    name="characters" width=100% height=1000px frameborder="no"
                 ></iframe> 
             </div>
             <!-- 第五个tab：关于 -->
@@ -240,6 +240,30 @@
 <!-- 功能脚本 -->
 <script src="index.js"></script>
 
+<!-- 懒加载 -->
+<script>
+    function nTabs_load(thisObj, Num){
+        let tmp = [1,2,3];
+        if(tmp.includes(Num)){
+            x = document.getElementById("Tab0_Content"+Num+"_iframe")
+            if(!x.src){
+                switch(Num){
+                    case 1:
+                        x.src="history.html" 
+                        break;
+                    case 2:
+                        x.src="./maps/maps.html" 
+                        break;
+                    case 3:
+                        x.src="./characters/characters.html" 
+                        break;
+                }
+            }
+        }
+        
+
+    }
+</script>
 <!-- 样式 -->
 <style>
     input[type=text], textarea {
