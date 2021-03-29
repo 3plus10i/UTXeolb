@@ -1,3 +1,5 @@
 *.psd
 *.asv
 *.py
+*.txt
+.vscode/
