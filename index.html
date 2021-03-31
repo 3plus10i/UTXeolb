@@ -77,7 +77,6 @@
 
         /* 普通计点页面的那几个文本框的宽度 */
         .text_area{
-            /* width: 360px; */
             width: 95%;
         }
 
@@ -113,23 +112,23 @@
 
                 <!-- 输入框 -->
                 <textarea
-                    class="text_area" id="in" rows="10" cols="40" style="color: #9e9e9e;" onclick="if(this.value =='在此处粘贴'){this.value ='';this.style.color='#000'}" onblur="if(this.value == ''){this.value = '在此处粘贴';this.style.color='#9e9e9e'}"
+                    class="text_area" id="in" rows="10" style="color: #9e9e9e;" onclick="if(this.value =='在此处粘贴'){this.value ='';this.style.color='#000'}" onblur="if(this.value == ''){this.value = '在此处粘贴';this.style.color='#9e9e9e'}"
                     >在此处粘贴</textarea>
                 <button id="cb" type="button" onclick="count_button()" style="width:100px;height:30px">计点</button>
-                <button id="rb" type="button" onclick="reset_button()" style="width:100px;height: 30px">重置</button>
+                <button id="rb" type="button" onclick="reset_button()" style="width:100px;height:30px">重置</button>
 
                 <!-- 输出框 -->
                 <p>摘要：</p>
-                <textarea class="text_area" id="abstract" readonly=true rows="5" cols="40"></textarea>
+                <textarea class="text_area" id="abstract" readonly=true rows="5"></textarea>
                 <button id="copy_ab" type="button" onclick="copy_ab('abstract')" style="width:100px;height: 30px">复制摘要</button>
 
                 <p>报告：</p>
-                <textarea class="text_area" id="report" readonly=true rows="10" cols="40"></textarea>
+                <textarea class="text_area" id="report" readonly=true rows="10"></textarea>
                 <button id="copy_rp" type="button" onclick="copy_rp('report')" style="width:100px;height: 30px">复制报告</button>
 
                 <!-- 控制面板 -->
                 <br><br>
-                <fieldset class="count_panel" style="width: 360px;">
+                <fieldset class="count_panel" style="width:95%;">
                     <legend>
                         控制面板
                     </legend>
@@ -197,10 +196,10 @@
             </div>
             <!-- 第二个tab：编年史 -->
             <div id="Tab0_Content1" class="none" >
-                <p>
-                    目前编年史截止到2020年4月，等更中......
+                <!-- <p>
+                    目前编年史截止到2021年3月
                     <br>
-                </p>
+                </p> -->
                 <iframe  id="Tab0_Content1_iframe"
                     name="history" width=100% height=1000px frameborder="no"
                 ></iframe> 
