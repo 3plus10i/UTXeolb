@@ -16,24 +16,21 @@
     <title>乐园系统 - UTXeolb</title>
 
     <style type="text/css">
-        * {
+        
+        /* tab标题的样式 */
+        ul {
             margin: 0;
             padding: 0;
             list-style: none;
             font-size: 14px
         }
-
         .nTab {
-            /* 整个tab页面外框宽度 */
-            /* 还是自动好啊gtmd */
-            /* width: 400px; */ 
-            /* 上下 左右的间距 */
-            margin: 5px 10px;
             background: #fff;
             border: 1px solid #e0e0e0;
             overflow: hidden
         }
 
+        /* 非激活页面会被隐藏 */
         .none {
             display: none;
         }
@@ -46,12 +43,6 @@
             line-height: 30px;
             font-weight: bold;
             text-align: center;
-            /* 这里控制每个tab的宽度 */
-            /* width: 100px; */
-        }
-
-        .nTab .TabTitle li a {
-            text-decoration: none;
         }
 
         /* 激活状态的颜色 */
@@ -84,14 +75,12 @@
 </head>
 
 <body>
-    <p>
-        <div style="display:inline; text-align:left; margin: 5px 12px; font-family: Helvetica,Microsoft YaHei;">
-            欢迎使用乐园系统!
-        </div> 
-        <div style="display:inline; text-align:right; margin: 0 0 0 90px; font-weight: normal;">
-            <img src="user.png" alt="user: " width="20" height="20" style="margin: 0 auto -4px;">UTXeolb 已登录
-        </div>
-    </p>
+    <div style="display:inline; text-align:left; margin: 2px 0px; font-family: Helvetica,Microsoft YaHei;">
+        欢迎使用乐园系统!
+    </div> 
+    <div style="display:inline; text-align:right; margin: 0 0 0 90px; font-weight: normal;">
+        <img src="user.png" alt="user: " width="20" height="20" style="margin: 0 auto -4px;">UTXeolb 已登录
+    </div>
 
     <div class="nTab">
         <div class="TabTitle">
@@ -270,23 +259,6 @@
 
     }
 </script>
-<!-- 样式 -->
-<style>
-    input[type=text], textarea {
-        transition: all 0.30s ease-in-out;
-        outline: none;
-        padding: 3px 0px 3px 3px;
-        margin: 5px 1px 3px 0px;
-        border: 1px solid #ddd;
-    }
-    
-    input[type=text]:focus, textarea:focus {
-        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-        padding: 3px 0px 3px 3px;
-        margin: 5px 1px 3px 0px;
-        border: 1px solid rgba(81, 203, 238, 1);
-    }
-</style>
 
 <script type="text/javascript">
     // 控制tab活动的函数
@@ -306,4 +278,23 @@
         }
     }
 </script>
+
+<!-- 文本框发光样式 -->
+<style>
+    input[type=text], textarea {
+        transition: all 0.30s ease-in-out;
+        outline: none;
+        padding: 3px 0px 3px 3px;
+        margin: 5px 1px 3px 0px;
+        border: 1px solid #ddd;
+    }
+    
+    input[type=text]:focus, textarea:focus {
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        padding: 3px 0px 3px 3px;
+        margin: 5px 1px 3px 0px;
+        border: 1px solid rgba(81, 203, 238, 1);
+    }
+</style>
+
 </html>
