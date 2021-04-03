@@ -136,6 +136,7 @@ class CommentSet {
 
 }
 
+// 计点
 function count_button(){
     // 获取输入文本
     let i = document.getElementById("in");
@@ -168,6 +169,7 @@ function count_button(){
 
 }
 
+// 重置文本框中的报告
 function reset_button(){
     let i = document.getElementById("in");
     i.value = ""
@@ -179,12 +181,13 @@ function reset_button(){
     v.value = "";
 }
 
+// 复制指定id的元素的内容
 function copy_by_id(id){
     document.getElementById(id).select();
     document.execCommand("Copy"); // 执行浏览器复制命令
-    // alert("已复制");
 }
 
+// 复制abstract系列动作
 function copy_ab(id){
     copy_by_id(id)
     x = document.getElementById("copy_ab")
@@ -196,6 +199,8 @@ function copy_ab(id){
         x.innerHTML = temp;
     },1500);
 }
+
+// 复制report系列动作
 function copy_rp(id){
     copy_by_id(id)
     x = document.getElementById("copy_rp")
@@ -206,4 +211,44 @@ function copy_rp(id){
         x.disabled=false;
         x.innerHTML = temp;
     },1500);
+}
+
+// 标签页面懒加载
+function nTabs_load(thisObj, Num){
+    let tmp = [1,2,3];
+    if(tmp.includes(Num)){
+        x = document.getElementById("Tab0_Content"+Num+"_iframe")
+        if(!x.src){
+            switch(Num){
+                case 1:
+                    x.src="history.html" 
+                    break;
+                case 2:
+                    x.src="./maps/maps.html" 
+                    break;
+                case 3:
+                    x.src="./characters/characters.html" 
+                    break;
+            }
+        }
+    }
+    
+
+}
+
+// 控制tab活动的函数
+function nTabs(thisObj, Num) {
+    if (thisObj.className == "active") return;
+    let tabObj = thisObj.parentNode.id;
+    let tabList = document.getElementById(tabObj).getElementsByTagName("li");
+    for (let i = 0; i < tabList.length; i++) {
+        // 重置各个tab的状态：激活该激活的，复位未激活的
+        if (i == Num) {
+            thisObj.className = "active";
+            document.getElementById(tabObj + "_Content" + i).style.display = "block";
+        } else {
+            tabList[i].className = "normal";
+            document.getElementById(tabObj + "_Content" + i).style.display = "none";
+        }
+    }
 }

@@ -11,68 +11,18 @@
             window.location.reload(true);
         }
     </script>
-
     
     <title>乐园系统 - UTXeolb</title>
 
-    <style type="text/css">
-        
-        /* tab标题的样式 */
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-size: 14px
-        }
-        .nTab {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            overflow: hidden
-        }
-
-        /* 非激活页面会被隐藏 */
-        .none {
-            display: none;
-        }
-
-        /* tab标题的样式 */
-        .nTab .TabTitle li {
-            float: left;
-            cursor: pointer;
-            height: 30px;
-            line-height: 30px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        /* 激活状态的颜色 */
-        .nTab .TabTitle .active {
-            background: #fff;
-            color: #14c573
-        }
-
-        /* 非激活状态的颜色 */
-        .nTab .TabTitle .normal {
-            background: #f7f7f7;
-            color: #a7a7a7
-        }
-
-        /* tab内容样式 */
-        .nTab .TabContent {
-            clear: both;
-            overflow: hidden;
-            background: #fff;
-            padding: 5px;
-            display: block
-        }
-
-        /* 普通计点页面的那几个文本框的宽度 */
-        .text_area{
-            width: 95%;
-        }
-
-    </style>
 </head>
+
+<!-- 样式 -->
+<style type="text/css">
+    @import url("index.css");
+</style>
+
+<!-- 脚本 -->
+<script src="index.js"></script>
 
 <body>
     <div style="display:inline; text-align:left; margin: 2px 0px; font-family: Helvetica,Microsoft YaHei;">
@@ -231,70 +181,5 @@
     <p style="font-size: xx-small;text-align:left; margin: 10px 0 0 10px">UTXeolb  <a style="font-size: xx-small;" href="https://adnmb.com/t/15080844">>>No.15080844</a></p>
 
 </body>
-
-<!-- 功能脚本 -->
-<script src="index.js"></script>
-
-<!-- 懒加载 -->
-<script>
-    function nTabs_load(thisObj, Num){
-        let tmp = [1,2,3];
-        if(tmp.includes(Num)){
-            x = document.getElementById("Tab0_Content"+Num+"_iframe")
-            if(!x.src){
-                switch(Num){
-                    case 1:
-                        x.src="history.html" 
-                        break;
-                    case 2:
-                        x.src="./maps/maps.html" 
-                        break;
-                    case 3:
-                        x.src="./characters/characters.html" 
-                        break;
-                }
-            }
-        }
-        
-
-    }
-</script>
-
-<script type="text/javascript">
-    // 控制tab活动的函数
-    function nTabs(thisObj, Num) {
-        if (thisObj.className == "active") return;
-        let tabObj = thisObj.parentNode.id;
-        let tabList = document.getElementById(tabObj).getElementsByTagName("li");
-        for (let i = 0; i < tabList.length; i++) {
-            // 重置各个tab的状态：激活该激活的，复位未激活的
-            if (i == Num) {
-                thisObj.className = "active";
-                document.getElementById(tabObj + "_Content" + i).style.display = "block";
-            } else {
-                tabList[i].className = "normal";
-                document.getElementById(tabObj + "_Content" + i).style.display = "none";
-            }
-        }
-    }
-</script>
-
-<!-- 文本框发光样式 -->
-<style>
-    input[type=text], textarea {
-        transition: all 0.30s ease-in-out;
-        outline: none;
-        padding: 3px 0px 3px 3px;
-        margin: 5px 1px 3px 0px;
-        border: 1px solid #ddd;
-    }
-    
-    input[type=text]:focus, textarea:focus {
-        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-        padding: 3px 0px 3px 3px;
-        margin: 5px 1px 3px 0px;
-        border: 1px solid rgba(81, 203, 238, 1);
-    }
-</style>
 
 </html>
