@@ -4,3 +4,5 @@
 *.txt
 .vscode/
 test/
+characters/characters_template.html
+maps/maps_template.html

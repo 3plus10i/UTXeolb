@@ -73,7 +73,5 @@ input[type=text]:focus, textarea:focus {
 .iframe-tall {
     width: 100%;
     /* 根据具体需要设置这里的高度 */
-    height: 85vh;
-    /* -8px边界抵消嵌套导致的双<body>所引起的额外8px边界 */
-    margin: -8px;
+    height: 83vh;
 }
