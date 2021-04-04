@@ -11,7 +11,7 @@ ul {
     overflow: hidden
 }
 
-/* 非激活页面会被隐藏 */
+/* 为元素添加none类以隐藏之 */
 .none {
     display: none;
 }
@@ -66,4 +66,14 @@ input[type=text]:focus, textarea:focus {
     padding: 3px 0px 3px 3px;
     margin: 5px 1px 3px 0px;
     border: 1px solid rgba(81, 203, 238, 1);
+}
+
+
+/* iframe元素的样式 */
+.iframe-tall {
+    width: 100%;
+    /* 根据具体需要设置这里的高度 */
+    height: 85vh;
+    /* -8px边界抵消嵌套导致的双<body>所引起的额外8px边界 */
+    margin: -8px;
 }
